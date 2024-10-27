@@ -4,7 +4,7 @@ import model.Library;
 import model.Persons;
 import service.LibraryService;
 
-public class PersonServiceImpl extends Library implements LibraryService{
+public class LibraryServiceImpl extends Library implements LibraryService{
 
     @Override
     public void addRequest(Persons person) {
