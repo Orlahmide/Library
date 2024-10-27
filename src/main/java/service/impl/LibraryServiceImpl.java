@@ -37,7 +37,7 @@ public class LibraryServiceImpl extends Library implements LibraryService{
             getLibraryCollection().put(bookName, getLibraryCollection().get(bookName) - requestedCopies); // Decrement by the requested number of copies
             System.out.println("The " + person.getRole() + " " + " has been assigned " + requestedCopies + " copies of the book: " + bookName);
         } else {
-            System.out.println("Sorry, " + requestedCopies + " copies of " + bookName + " are unavailable for " + person.getRole() + " " + person.getBookName());
+            System.out.println("Sorry, " + requestedCopies + " copies of " + bookName + " are unavailable for " + person.getRole());
         }
     }
 }

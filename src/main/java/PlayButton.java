@@ -1,15 +1,12 @@
 import model.Library;
 import model.Persons;
-import service.impl.PersonServiceImpl;
-import util.RoleComparator;
-
-import java.util.PriorityQueue;
+import service.impl.LibraryServiceImpl;
 
 public class PlayButton {
 
     public static void main(String[] args) {
 // Create an instance of PersonServiceImpl
-        PersonServiceImpl library = new PersonServiceImpl();
+        LibraryServiceImpl library = new LibraryServiceImpl();
 
         // Initialize the library with books
         library.initializeBooks();
