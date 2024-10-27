@@ -2,18 +2,18 @@ package model;
 
 public class Persons {
 
-    private String name;
+    private String bookName;
     private String role;
     private int requestedCopies;
 
-    public Persons(String name, String role, int requestedCopies) {
-        this.name = name;
+    public Persons(String bookName, String role, int requestedCopies) {
+        this.bookName = bookName;
         this.role = role;
         this.requestedCopies = requestedCopies;
     }
 
-    public String getName() {
-        return name;
+    public String getBookName() {
+        return bookName;
     }
 
     public String getRole() {
@@ -27,7 +27,7 @@ public class Persons {
     @Override
     public String toString() {
         return "Persons{" +
-                "name='" + name + '\'' +
+                "name='" + bookName + '\'' +
                 ", role='" + role + '\'' +
                 ", requestedCopies=" + requestedCopies +
                 '}';
