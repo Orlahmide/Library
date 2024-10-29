@@ -2,19 +2,20 @@ package model;
 
 import util.RoleComparator;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Library {
     private Map<String, Integer> libraryCollection;
     private PriorityQueue<Persons> requestQueue;
+    private List<Persons> fifo;
 
     public Library() {
 
         libraryCollection = new HashMap<>();
-        requestQueue = new PriorityQueue<>(new RoleComparator());
 
+//        This helps to archive the teacher, senior, and junior student priority arrangement
+        requestQueue = new PriorityQueue<>(new RoleComparator());
+        fifo = new ArrayList<>();
 
     }
 
@@ -26,4 +27,7 @@ public class Library {
         return libraryCollection;
     }
 
+    public List<Persons> getFifo() {
+        return fifo;
+    }
 }

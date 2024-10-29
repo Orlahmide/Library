@@ -17,7 +17,7 @@ public class LibraryServiceImpl extends Library implements LibraryService{
         getLibraryCollection().put("Harry Potter", 13);
         getLibraryCollection().put("Getting Rich", 10);
         getLibraryCollection().put("Being Happy", 9);
-        getLibraryCollection().put("Becoming The Best", 8);
+        getLibraryCollection().put("Becoming The Best", 28);
         getLibraryCollection().put("Joys of coding", 7);
     }
 
@@ -39,5 +39,24 @@ public class LibraryServiceImpl extends Library implements LibraryService{
         } else {
             System.out.println("Sorry, " + requestedCopies + " copies of " + bookName + " are unavailable for " + person.getRole());
         }
+    }
+
+    @Override
+    public void addFirstInFirstOut(Persons person) {
+        getFifo().add(person);
+    }
+
+    @Override
+    public void processRequestFifo() {
+        while (!getFifo().isEmpty()) {
+            Persons person = getFifo().removeFirst();
+            String requestedBook = person.getBookName();
+            assignBooks(person, requestedBook);
+        }
+    }
+
+    @Override
+    public void assignBooks(Persons person, String bookName) {
+        assignBook(person,bookName);
     }
 }
